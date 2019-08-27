@@ -100,9 +100,11 @@ public class GameSpec {
         boolean winPlayer = true;
 
         game.initField();
-        game.field[0][0] = "X";
-        game.field[1][0] = "X";
-        game.field[2][0] = "X";
+        game.step(0, 0) ;
+        game.step(1, 1);
+        game.step(1,0);
+        game.step(0, 1);
+        game.step(2,0);
 
         assertEquals(winPlayer, game.checkWin("X"));
 
@@ -117,9 +119,11 @@ public class GameSpec {
         boolean winPlayer = true;
 
         game.initField();
-        game.field[0][0] = "X";
-        game.field[0][1] = "X";
-        game.field[0][2] = "X";
+        game.step(0,0);
+        game.step(1, 1);
+        game.step(0,1);
+        game.step(2, 2);
+        game.step(0,2);
 
         assertEquals(winPlayer, game.checkWin("X"));
 
@@ -134,9 +138,11 @@ public class GameSpec {
         boolean winPlayer = true;
 
         game.initField();
-        game.field[0][0] = "X";
-        game.field[1][1] = "X";
-        game.field[2][2] = "X";
+        game.step(0,0);
+        game.step(0,1);
+        game.step(1,1);
+        game.step(0,2);
+        game.step(2,2);
 
         assertEquals(winPlayer, game.checkWin("X"));
 
@@ -151,9 +157,11 @@ public class GameSpec {
         boolean winPlayer = true;
 
         game.initField();
-        game.field[0][2] = "X";
-        game.field[1][1] = "X";
-        game.field[2][0] = "X";
+        game.step(0,2);
+        game.step(0,1);
+        game.step(1,1);
+        game.step(0,0);
+        game.step(2,0);
 
         assertEquals(winPlayer, game.checkWin("X"));
 
@@ -168,9 +176,12 @@ public class GameSpec {
         boolean winComp = true;
 
         game.initField();
-        game.field[0][0] = "0";
-        game.field[1][0] = "0";
-        game.field[2][0] = "0";
+        game.step(0,1);
+        game.step(0,0);
+        game.step(0,2);
+        game.step(1,0);
+        game.step(1,2);
+        game.step(2,0);
 
         assertEquals(winComp, game.checkWin("0"));
 
@@ -185,9 +196,12 @@ public class GameSpec {
         boolean winComp = true;
 
         game.initField();
-        game.field[0][0] = "0";
-        game.field[0][1] = "0";
-        game.field[0][2] = "0";
+        game.step(2,0);
+        game.step(0,0);
+        game.step(1,0);
+        game.step(0,1);
+        game.step(2,2);
+        game.step(0,2);
 
         assertEquals(winComp, game.checkWin("0"));
 
@@ -202,9 +216,12 @@ public class GameSpec {
         boolean winComp = true;
 
         game.initField();
-        game.field[0][0] = "0";
-        game.field[1][1] = "0";
-        game.field[2][2] = "0";
+        game.step(2,0);
+        game.step(0,0);
+        game.step(1,0);
+        game.step(1,1) ;
+        game.step(1,2);
+        game.step(2,2);
 
         assertEquals(winComp, game.checkWin("0"));
 
@@ -219,9 +236,12 @@ public class GameSpec {
         boolean winComp = true;
 
         game.initField();
-        game.field[0][2] = "0";
-        game.field[1][1] = "0";
-        game.field[2][0] = "0";
+        game.step(2,1);
+        game.step(0,2);
+        game.step(0,0);
+        game.step(1,1);
+        game.step(1,2);
+        game.step(2,0);
 
         assertEquals(winComp, game.checkWin("0"));
 

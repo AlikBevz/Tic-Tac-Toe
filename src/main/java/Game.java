@@ -3,11 +3,11 @@ import java.util.Scanner;
 
 public class Game {
 
-    static final int RAZMER_POLYA = 3;
-    static final String NULL = "_";
-    static final String[][] field = new String[RAZMER_POLYA][RAZMER_POLYA];
-    static Random random = new Random();
 
+    static final String NULL = "_";
+    int RAZMER_POLYA = 3;
+    Random random = new Random();
+    String[][] field = new String[RAZMER_POLYA][RAZMER_POLYA];
 
     public int stepCounter = 0;
 
